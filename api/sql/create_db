@@ -16,6 +16,6 @@ fi
   
 $MYSQL -uroot -p -e "$SQL"
 
-cat ~/flask_app/site_api/api/sql/create_tables.sql ~/flask_app/site_api/api/sql/populate_tables.sql > ~/flask_app/site_api/api/sql/create_sql
-$MYSQL -u root -p $1 < ~/flask_app/site_api/api/sql/create_sql
-rm ~/flask_app/site_api/api/sql/create_sql
+cat ~/site_api/api/sql/create_tables.sql ~/site_api/api/sql/populate_tables.sql > ~/site_api/api/sql/create_sql
+$MYSQL -u root -p $1 < ~/site_api/api/sql/create_sql
+rm ~/site_api/api/sql/create_sql

@@ -10,7 +10,8 @@ import jwt
 import bcrypt
 
 from api.controllers.base import BaseController
-from api.controllers.user import UserController
+from api.controllers.skills import SkillsController
+from api.controllers.experiences import ExperiencesController
 #from utilities import get_log_level
 
 app = Flask(__name__, instance_relative_config=True)
@@ -25,7 +26,8 @@ app.api = Api(app)
 app.mysql = MySQL(app)
 
 # define routes
-app.api.add_resource(SkillController, '/skills')
+app.api.add_resource(SkillsController, '/skills')
+app.api.add_resource(ExperiencesController, '/experiences')
 
 @app.before_request
 def before_request():
