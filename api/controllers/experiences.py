@@ -25,7 +25,7 @@ class ExperiencesController(BaseController):
 
 		sql = 'SELECT * FROM' + constants.EXPERIENCE_TABLE
 
-		params = (,)
+		params = ()
 
 		res = db_query_select(sql,params)
 
