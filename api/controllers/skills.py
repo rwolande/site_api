@@ -25,7 +25,7 @@ class SkillsController(BaseController):
 
 		sql = 'SELECT * FROM' + constants.SKILL_TABLE + 'WHERE displayed=1'
 
-		params = (,)
+		params = ()
 
 		res = db_query_select(sql,params)
 
