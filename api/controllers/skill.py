@@ -42,4 +42,4 @@ class SkillController(BaseController):
 		if len(exp_res) == 0:
 			return super(SkillsController,self).error_response(Status.MISSING_PARAMETERS)
 
-		return super(SkillController,self).success_response({'skill':res,'experiences':exp_res})
+		return super(SkillController,self).success_response({'skill':res[0],'experiences':exp_res})

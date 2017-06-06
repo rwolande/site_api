@@ -45,4 +45,4 @@ class ExperienceController(BaseController):
 		if len(skills_res) == 0:
 			return super(ExperienceController,self).error_response(Status.MISSING_PARAMETERS)
 
-		return super(ExperienceController,self).success_response({'experience':res,'skills':skills_res})
+		return super(ExperienceController,self).success_response({'experience':res[0],'skills':skills_res})
