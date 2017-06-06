@@ -28,7 +28,7 @@ class SkillController(BaseController):
 		res = db_query_select(sql,params)
 
 		if len(res) == 0:
-			return super(SkillsController,self).error_response(Status.MISSING_PARAMETERS)
+			return super(SkillController,self).error_response(Status.MISSING_PARAMETERS)
 
 		# sql = """SELECT es.experience_id, e.website, e.image_source FROM""" + constants.EXPERIENCE_SKILL_TABLE
 		# specs = """AS es JOIN """ + constants.EXPERIENCE_TABLE + """AS e ON e.id=es.experience_id 
@@ -44,4 +44,4 @@ class SkillController(BaseController):
 
 		# res["experiences"=exp_res]
 
-		return super(SkillsController,self).success_response({'skill':res})
+		return super(SkillController,self).success_response({'skill':res})

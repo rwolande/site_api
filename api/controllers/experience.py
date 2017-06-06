@@ -31,6 +31,6 @@ class ExperienceController(BaseController):
 		res = db_query_select(sql,params)
 
 		if len(res) == 0:
-			return super(ExperiencesController,self).error_response(Status.MISSING_PARAMETERS)
+			return super(ExperienceController,self).error_response(Status.MISSING_PARAMETERS)
 
-		return super(ExperiencesController,self).success_response({'experience':res})
+		return super(ExperienceController,self).success_response({'experience':res})
