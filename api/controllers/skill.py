@@ -23,25 +23,25 @@ class SkillController(BaseController):
 	# @protected
 	def get(self, skill_id, *args, **kwargs):
 
-		sql = """SELECT s.* FROM""" + constants.SKILL_TABLE + """s WHERE s.id=%s LIMIT 1"""
+		sql = "SELECT s.* FROM" + constants.SKILL_TABLE + "s WHERE s.id=%s LIMIT 1"
 		params = (skill_id)
 		res = db_query_select(sql,params)
 
-		if len(skill_res) == 0:
+		if len(res) == 0:
 			return super(SkillsController,self).error_response(Status.MISSING_PARAMETERS)
 
-		sql = """SELECT es.experience_id, e.website, e.image_source FROM""" + constants.EXPERIENCE_SKILL_TABLE
-		specs = """AS es JOIN """ + constants.EXPERIENCE_TABLE + """AS e ON e.id=es.experience_id 
-			WHERE es.skill_id=%s
+		# sql = """SELECT es.experience_id, e.website, e.image_source FROM""" + constants.EXPERIENCE_SKILL_TABLE
+		# specs = """AS es JOIN """ + constants.EXPERIENCE_TABLE + """AS e ON e.id=es.experience_id 
+		# 	WHERE es.skill_id=%s
 
-			GROUP BY es.experience_id
-			ORDER BY es.experience_id"""
-		sql = sql + specs
-		exp_res = db_query_select(sql,params)
+		# 	GROUP BY es.experience_id
+		# 	ORDER BY es.experience_id"""
+		# sql = sql + specs
+		# exp_res = db_query_select(sql,params)
 
-		if len(exp_res) == 0:
-			return super(SkillsController,self).error_response(Status.MISSING_PARAMETERS)
+		# if len(exp_res) == 0:
+		# 	return super(SkillsController,self).error_response(Status.MISSING_PARAMETERS)
 
-		res["experiences"=exp_res]
+		# res["experiences"=exp_res]
 
 		return super(SkillsController,self).success_response({'skill':res})

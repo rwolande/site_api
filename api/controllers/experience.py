@@ -24,7 +24,7 @@ class ExperienceController(BaseController):
 	def get(self, *args, **kwargs):
 
 		experience_id = 1
-		# sql = 'SELECT * FROM' + constants.EXPERIENCE_TABLE + "INNER JOINWHERE id=" + experience_id
+		sql = "SELECT * FROM" + constants.EXPERIENCE_TABLE
 
 		params = ()
 
