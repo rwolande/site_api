@@ -27,7 +27,9 @@ app.mysql = MySQL(app)
 
 # define routes
 app.api.add_resource(SkillsController, '/skills')
+app.api.add_resource(SkillController, '/skill')
 app.api.add_resource(ExperiencesController, '/experiences')
+app.api.add_resource(ExperienceController, '/experience')
 
 @app.before_request
 def before_request():

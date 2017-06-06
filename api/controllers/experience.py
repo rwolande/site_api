@@ -15,15 +15,16 @@ from api import constants
 from api.status_codes import Status
 from api.controllers import db_query_select, db_query_insert
 
-class SkillsController(BaseController):
+class ExperienceController(BaseController):
 
 	def __init__(self):
 		super(BaseController, self)
 
 	# @protected
-	def get(self, skill_id, *args, **kwargs):
+	def get(self, *args, **kwargs):
 
-		sql = 'SELECT * FROM' + constants.SKILL_TABLE
+		experience_id = 1
+		# sql = 'SELECT * FROM' + constants.EXPERIENCE_TABLE + "INNER JOINWHERE id=" + experience_id
 
 		params = ()
 
@@ -32,4 +33,4 @@ class SkillsController(BaseController):
 		if len(res) == 0:
 			return super(ExperiencesController,self).error_response(Status.MISSING_PARAMETERS)
 
-		return super(ExperiencesController,self).success_response({'skills':res})
+		return super(ExperiencesController,self).success_response({'experience':res})
