@@ -23,7 +23,6 @@ class ExperienceController(BaseController):
 	# @protected
 	def get(self, experience_id, *args, **kwargs):
 
-		experience_id = 1
 		sql = "SELECT * FROM" + constants.EXPERIENCE_TABLE + "WHERE id=%s"
 
 		params = (experience_id,)
