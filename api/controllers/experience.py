@@ -42,7 +42,7 @@ class ExperienceController(BaseController):
 		sql = sql + specs
 		skills_res = db_query_select(sql,params)
 
-		if len(exp_res) == 0:
+		if len(skills_res) == 0:
 			return super(ExperienceController,self).error_response(Status.MISSING_PARAMETERS)
 
 		return super(ExperienceController,self).success_response({'experience':res,'skills':skills_res})
