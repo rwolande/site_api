@@ -24,7 +24,7 @@ class SkillController(BaseController):
 	def get(self, skill_id, *args, **kwargs):
 
 		sql = "SELECT s.* FROM" + constants.SKILL_TABLE + "s WHERE s.id=%s LIMIT 1"
-		params = (skill_id)
+		params = (skill_id,)
 		res = db_query_select(sql,params)
 
 		if len(res) == 0:
