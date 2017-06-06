@@ -10,10 +10,10 @@ import jwt
 import bcrypt
 
 from api.controllers.base import BaseController
+from api.controllers.skill import SkillController
 from api.controllers.skills import SkillsController
-from api.controllers.experiences import ExperiencesController
 from api.controllers.experience import ExperienceController
-from api.controllers.skill import ExperienceController
+from api.controllers.experiences import ExperiencesController
 #from utilities import get_log_level
 
 app = Flask(__name__, instance_relative_config=True)
