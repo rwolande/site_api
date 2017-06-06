@@ -21,7 +21,7 @@ class SkillsController(BaseController):
 		super(BaseController, self)
 
 	# @protected
-	def get(self, skill_id, *args, **kwargs):
+	def get(self, *args, **kwargs):
 
 		sql = 'SELECT * FROM' + constants.SKILL_TABLE
 
