@@ -33,4 +33,16 @@ class ExperienceController(BaseController):
 		if len(res) == 0:
 			return super(ExperienceController,self).error_response(Status.MISSING_PARAMETERS)
 
-		return super(ExperienceController,self).success_response({'experience':res})
+		sql = """SELECT es.skill_id, s.name FROM""" + constants.EXPERIENCE_SKILL_TABLE
+		specs = """AS es JOIN """ + constants.SKILL_TABLE + """AS s ON s.id=es.skill_id 
+			WHERE es.experience_id=%s
+
+			GROUP BY es.skill_id
+			ORDER BY es.skill_id"""
+		sql = sql + specs
+		skills_res = db_query_select(sql,params)
+
+		if len(exp_res) == 0:
+			return super(ExperienceController,self).error_response(Status.MISSING_PARAMETERS)
+
+		return super(ExperienceController,self).success_response({'experience':res,'skills':skills_res})

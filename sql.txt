@@ -1,0 +1,11 @@
+---- USER HOVERED OVER SKILL, NEEDS RELATED SKILL.ID->SKILL.* INFORMATION AND * ASSOCIATED EXPERIENCES
+
+SELECT s.* FROM portfolio.skill AS s WHERE s.id=1 LIMIT 1;
+
+SELECT es.experience_id, e.website, e.image_source FROM portfolio.experience_skill AS es JOIN portfolio.experience AS e ON e.id=es.experience_id WHERE es.skill_id=1 GROUP BY es.experience_id ORDER BY es.experience_id;
+
+---- USER HOVERED OVER EXPERIENCE, NEEDS RELATED EXPERIENCE.ID->EXPERIENCE.* INFORMATION AND * ASSOCIATED SKILLS
+
+SELECT e.* FROM portfolio.experience AS e WHERE e.id=1 LIMIT 1;
+
+SELECT es.skill_id, s.name FROM portfolio.experience_skill AS es JOIN portfolio.skill AS s ON s.id=es.skill_id WHERE es.experience_id=1 GROUP BY es.skill_id ORDER BY es.skill_id;
