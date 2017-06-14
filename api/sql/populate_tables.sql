@@ -9,22 +9,20 @@ INSERT INTO experience (id,title,description,website,image_source,years,open_sou
   ('8','git','git fucking hub','github.com/rwolande','.rys.png','2013-',1),
   ('9','etc','etc desc','etc.com','etc.png','1992-',1);
 
-INSERT INTO skill (id,name,displayed)
-  VALUES ('1','Swift',1),
-  ('2','Java',1),
-  ('3','Sys/Bash',1),
-  ('4','Python',1),
-  ('5','Ruby',1),
-  ('6','Javascript',1),
-  ('7','PHP',1),
-  ('8','SQL',1),
-  ('9','C/C++',1),
-  ('10','Obj-C',1),
-  ('11','HTML/CSS',1),
-  ('12','[...n-1]',1),
-  ('13','AWS',0),
-  ('14','Guest Lecturer',0),
-  ('15','MHacks 8 & MHacks 9 Mentor',0);
+INSERT INTO skill (id,group,name,description,duration,start_image_source,current_image_source,displayed)
+  VALUES ('1',1,'Swift','I have been using Swift since the day it was released in beta in June of 2014. Objective-C had been my primary mobile language prior, so it was a natural transition.','2014','swift.png','swift.png',1),
+  ('2',2,'Obj-C','I have been using Objective-C since the iPhone 1 was released, in which I made sandbox applications for Cydia. Since then I published multiple applications in Obj-C and received my first professional development opportunity after just my Freshman Year, largely due to the Obj-C I had under my belt.','2007','obj_c.png','obj_c.png',1),
+  ('3',2,'Java','I more recently forayed into Java, and at this point havem used it for server-side data transactions as well as Mobile Development.','2015','java.png','java.png',1),
+  ('4',3,'Python','<py3','2014','python.png','python.png',1),
+  ('5',3,'PHP','Recursive AF','2010','php.png','php.png',1),
+  ('6',3,'Ruby','But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?','2016','ruby.png','ruby.png',1),
+  ('7',4,'SQL','I dig the SQLs','2010','sql.png','sql.png',1),
+  ('8',4,'Bash','Smash it yo','2011','bash.png','bash.png',1),
+  ('9',4,'Javascript','Not too shabsty','2013','javascript.png','javascript.png',1),
+  ('10',4,'HTML/CSS','Yep','2013','sass.png','sass.png',1),
+  ('11',5,'C/C++','Since U of M','2011','c.png','c.png',1),
+  ('12',5,'AWS','Hull yes','2012','aws.png','aws.png',1),
+  ('13',5,'Etc.','Guest speaking, Mentorship @ MHacks, TechArb','Since Birth','etc.png','etc.png',1);
 
 INSERT INTO experience_skill (experience_id,skill_id)
   VALUES ('1','1'),

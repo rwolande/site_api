@@ -11,10 +11,13 @@ CREATE TABLE experience (
 
 CREATE TABLE skill (
   id int(11) NOT NULL AUTO_INCREMENT,
+  group int(11) NOT NULL DEFAULT '1',
   name varchar(255)  NOT NULL DEFAULT '',
-  displayed tinyint(1) NOT NULL DEFAULT 1,
+  description varchar(1000)  NOT NULL DEFAULT '',
+  duration varchar(30) NOT NULL DEFAULT 'NEW',
   start_image_source varchar(255) NOT NULL DEFAULT '',
   current_image_source varchar(255) NOT NULL DEFAULT '',
+  displayed tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (id)
 );
 
