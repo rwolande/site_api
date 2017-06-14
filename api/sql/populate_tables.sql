@@ -9,7 +9,7 @@ INSERT INTO experience (id,title,description,website,image_source,years,open_sou
   ('8','git','git fucking hub','github.com/rwolande','.rys.png','2013-',1),
   ('9','etc','etc desc','etc.com','etc.png','1992-',1);
 
-INSERT INTO skill (id,group,name,description,duration,start_image_source,current_image_source,displayed)
+INSERT INTO skill (id,stack_group,name,description,duration,start_image_source,current_image_source,displayed)
   VALUES ('1',1,'Swift','I have been using Swift since the day it was released in beta in June of 2014. Objective-C had been my primary mobile language prior, so it was a natural transition.','2014','swift.png','swift.png',1),
   ('2',2,'Obj-C','I have been using Objective-C since the iPhone 1 was released, in which I made sandbox applications for Cydia. Since then I published multiple applications in Obj-C and received my first professional development opportunity after just my Freshman Year, largely due to the Obj-C I had under my belt.','2007','obj_c.png','obj_c.png',1),
   ('3',2,'Java','I more recently forayed into Java, and at this point havem used it for server-side data transactions as well as Mobile Development.','2015','java.png','java.png',1),
