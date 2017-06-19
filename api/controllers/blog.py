@@ -34,8 +34,7 @@ class BlogController(BaseController):
 		specs = """AS bpt JOIN """ + constants.BLOG_TAG_TABLE + """AS bt ON bt.id=bpt.tag_id 
 			WHERE bpt.post_id=%s
 
-			GROUP BY bpt.post_id
-			ORDER BY bpt.post_id"""
+			ORDER BY bt.id ASC"""
 		sql = sql + specs
 		tags_res = db_query_select(sql,params)
 
