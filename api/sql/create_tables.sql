@@ -36,7 +36,7 @@ CREATE TABLE blog_post (
   content varchar(5000) NOT NULL,
   website varchar(255) NOT NULL DEFAULT '',
   image_source varchar(255) NOT NULL DEFAULT '',
-  creation_time datetime NOT NULL DEFAULT GETDATE(),
+  creation_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   private tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (id)
 );
