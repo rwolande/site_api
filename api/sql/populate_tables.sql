@@ -24,6 +24,39 @@ INSERT INTO skill (id,stack_group,name,description,duration,start_image_source,c
   ('12',5,'AWS','Hull yes','2012','aws.png','aws.png',1),
   ('13',5,'Etc.','Guest speaking, Mentorship @ MHacks, TechArb','Since Birth','etc.png','etc.png',1);
 
+INSERT INTO blog_post (id,title,content,website,image_source)
+  VALUES ('1','Everyone is a Designer','Blah Blah ','',''),
+  ('2','Native vs Cross-Platform','Blah Blah I have been using Swift since the day it was released in beta in June of','',''),
+  ('3','Fuck Trump','Blah Blah Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','',''),
+  ('4','Inspired By Nature','Blah Blah ','',''),
+  ('5','Swift 4','Blah Blah Swift 4 wasnt even mentioned','','');
+
+INSERT INTO blog_tag (id,title,description);
+  VALUES ('1','Nature','Its beautiful'),
+  ('2','iOS','Swift,Obj-C,etc.'),
+  ('3','WebDev','Blah Blah '),
+  ('4','UX','Blah Blah '),
+  ('5','Design','Blah Blah '),
+  ('6','Workflow','Blah Blah '),
+  ('7','Command-Line','Blah Blah '),
+  ('8','Food','Mmm'),
+  ('9','News','Hype');
+
+INSERT INTO blog_post_tag (post_id,tag_id)
+  VALUES ('1','1'),
+  ('1','4'),
+  ('2','2'),
+  ('2','4'),
+  ('2','6'),
+  ('3','1'),
+  ('3','9'),
+  ('4','1'),
+  ('4','5'),
+  ('4','6'),
+  ('5','2'),
+  ('5','6'),
+  ('5','9');
+
 INSERT INTO experience_skill (experience_id,skill_id)
   VALUES ('1','1'),
   ('1','2'),

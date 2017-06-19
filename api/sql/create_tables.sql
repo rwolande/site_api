@@ -30,6 +30,36 @@ CREATE TABLE experience_skill (
   CONSTRAINT experience_fk FOREIGN KEY (experience_id) REFERENCES experience (id)
 );
 
+CREATE TABLE blog_post (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  title varchar(255) NOT NULL,
+  content varchar(5000) NOT NULL,
+  website varchar(255) NOT NULL DEFAULT '',
+  image_source varchar(255) NOT NULL DEFAULT '',
+  creation_time datetime NOT NULL DEFAULT GETDATE(),
+  private tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE blog_tag (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  title varchar(255) NOT NULL,
+  description varchar(5000) NOT NULL DEFAULT '',
+  hex varchar(30) NOT NULL DEFAULT '000',
+  website varchar(255) NOT NULL DEFAULT '',
+  image_source varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE blog_post_tag (
+  post_id int(11) NOT NULL,
+  tag_id int(11) NOT NULL,
+  KEY post_fk (post_id),
+  KEY tag_fk (tag_id),
+  CONSTRAINT post_fk FOREIGN KEY (post_id) REFERENCES blog_post (id),
+  CONSTRAINT tag_fk FOREIGN KEY (tag_id) REFERENCES blog_tag (id)
+);
+
 -- CREATE TABLE event (
 --   id int(11) NOT NULL AUTO_INCREMENT,
 --   user_id varchar(255) DEFAULT NULL,

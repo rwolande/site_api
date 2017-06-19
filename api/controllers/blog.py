@@ -15,31 +15,31 @@ from api import constants
 from api.status_codes import Status
 from api.controllers import db_query_select, db_query_insert
 
-class SkillController(BaseController):
+class BlogController(BaseController):
 
 	def __init__(self):
 		super(BaseController, self)
 
 	# @protected
-	def get(self, skill_id, *args, **kwargs):
+	def get(self, blog_id, *args, **kwargs):
 
-		sql = "SELECT s.* FROM" + constants.SKILL_TABLE + "s WHERE s.id=%s LIMIT 1"
+		sql = "SELECT b.* FROM" + constants.BLOG_POST_TABLE + "b WHERE b.id=%s LIMIT 1"
 		params = (skill_id,)
 		res = db_query_select(sql,params)
 
 		if len(res) == 0:
 			return super(SkillController,self).error_response(Status.MISSING_PARAMETERS)
 
-		sql = """SELECT es.experience_id, e.website, e.image_source FROM""" + constants.EXPERIENCE_SKILL_TABLE
-		specs = """AS es JOIN """ + constants.EXPERIENCE_TABLE + """AS e ON e.id=es.experience_id 
-			WHERE es.skill_id=%s
+		sql = """SELECT bt.name, bt.hex FROM""" + constants.BLOG_POST_TAG_TABLE
+		specs = """AS bpt JOIN """ + constants.BLOG_TAG_TABLE + """AS bt ON bp.id=bpt.post_id 
+			WHERE bpt.post_id=%s
 
-			GROUP BY es.experience_id
-			ORDER BY es.experience_id"""
+			GROUP BY bpt.post_id
+			ORDER BY bpt.post_id"""
 		sql = sql + specs
-		exp_res = db_query_select(sql,params)
+		tags_res = db_query_select(sql,params)
 
 		if len(exp_res) == 0:
-			return super(SkillController,self).error_response(Status.MISSING_PARAMETERS)
+			return super(BlogController,self).error_response(Status.MISSING_PARAMETERS)
 
-		return super(SkillController,self).success_response({'skill':res[0],'experiences':exp_res})
+		return super(BlogController,self).success_response({'post':res[0],'tags':tags_res})

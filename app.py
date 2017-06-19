@@ -14,6 +14,8 @@ from api.controllers.skill import SkillController
 from api.controllers.skills import SkillsController
 from api.controllers.experience import ExperienceController
 from api.controllers.experiences import ExperiencesController
+from api.controllers.blog import BlogController
+from api.controllers.blogs import BlogsController
 #from utilities import get_log_level
 
 app = Flask(__name__, instance_relative_config=True)
@@ -32,6 +34,8 @@ app.api.add_resource(SkillsController, '/skills')
 app.api.add_resource(SkillController, '/skill/<int:skill_id>')
 app.api.add_resource(ExperiencesController, '/experiences')
 app.api.add_resource(ExperienceController, '/experience/<int:experience_id>')
+app.api.add_resource(BlogsController, '/blogs')
+app.api.add_resource(BlogController, '/blog/<int:blog_id>')
 
 @app.before_request
 def before_request():
