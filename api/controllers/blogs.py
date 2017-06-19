@@ -27,11 +27,14 @@ class BlogsController(BaseController):
 		params = ()
 		res = db_query_select(sql,params)
 
+		if len(res) == 0:
+			return super(BlogsController,self).error_response(Status.MISSING_PARAMETERS)
+
 		sql = 'SELECT * FROM' + constants.BLOG_TAG_TABLE
 		params = ()
 		tags_res = db_query_select(sql,params)
 
-		if len(res) == 0:
+		if len(tags_res) == 0:
 			return super(BlogsController,self).error_response(Status.MISSING_PARAMETERS)
 
 		return super(BlogsController,self).success_response({'posts':res,'tags':tags_res})
