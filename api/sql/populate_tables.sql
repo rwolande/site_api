@@ -31,7 +31,7 @@ INSERT INTO blog_post (id,title,content,website,image_source)
   ('4','Inspired By Nature','Blah Blah ','',''),
   ('5','Swift 4','Blah Blah Swift 4 wasnt even mentioned','','');
 
-INSERT INTO blog_tag (id,title,description);
+INSERT INTO blog_tag (id,title,description)
   VALUES ('1','Nature','Its beautiful'),
   ('2','iOS','Swift,Obj-C,etc.'),
   ('3','WebDev','Blah Blah '),
