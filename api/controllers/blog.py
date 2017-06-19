@@ -31,7 +31,7 @@ class BlogController(BaseController):
 			return super(BlogController,self).error_response(Status.MISSING_PARAMETERS)
 
 		sql = """SELECT bt.title, bt.hex FROM""" + constants.BLOG_POST_TAG_TABLE
-		specs = """AS bpt JOIN """ + constants.BLOG_TAG_TABLE + """AS bt ON bp.id=bpt.post_id 
+		specs = """AS bpt JOIN """ + constants.BLOG_TAG_TABLE + """AS bt ON bt.id=bpt.tag_id 
 			WHERE bpt.post_id=%s
 
 			GROUP BY bpt.post_id

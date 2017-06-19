@@ -23,7 +23,7 @@ class BlogsController(BaseController):
 	# @protected
 	def get(self, *args, **kwargs):
 
-		sql = 'SELECT * FROM' + constants.BLOG_POST_TABLE + "LIMIT 10 ORDER BY time_creation DESC"
+		sql = 'SELECT * FROM' + constants.BLOG_POST_TABLE + "LIMIT 10 ORDER BY creation_time DESC"
 		params = ()
 		res = db_query_select(sql,params)
 
