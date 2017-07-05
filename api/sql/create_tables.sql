@@ -59,3 +59,11 @@ CREATE TABLE blog_post_tag (
   CONSTRAINT post_fk FOREIGN KEY (post_id) REFERENCES blog_post (id),
   CONSTRAINT tag_fk FOREIGN KEY (tag_id) REFERENCES blog_tag (id)
 );
+
+CREATE TABLE contact_email (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  content varchar(5000) NOT NULL,
+  creation_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  return_address varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+);
