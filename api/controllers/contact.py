@@ -27,7 +27,4 @@ class ContactController(BaseController):
 		params = (g.content,g.email)
 		res = db_query_insert(sql,params)
 
-		if len(res) == 0:
-			return super(ContactController,self).error_response(Status.MISSING_PARAMETERS)
-
-		return super(ContactController,self).success_response({'message':res[0]})
+		return super(ContactController,self).success_response({'result':res})
