@@ -24,7 +24,7 @@ class ContactController(BaseController):
 	def post(self, *args, **kwargs):
 
 		sql = "INSERT INTO" + constants.CONTACT_TABLE + "(content,return_address) VALUES (%s,%s)"
-		params = (kwargs.content,kwargs.email)
+		params = (kwargs['content'],kwargs['email'])
 		res = db_query_insert(sql,params)
 
 		if len(res) == 0:
