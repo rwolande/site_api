@@ -44,13 +44,14 @@ def before_request():
 
 	# Add anything you want to parse from the POST body
 	# to this array and it will be available in flask.g
-	post_parameters = ['content',
-					   'email']
+	
+	# post_parameters = ['content',
+	# 				   'email']
 					   
-	if not request.method == 'GET':
-		for param in post_parameters:
-			value = request.json[param] if param in request.json else None
-			setattr(g,param,value)
+	# if not request.method == 'GET':
+	# 	for param in post_parameters:
+	# 		value = request.json[param] if param in request.json else None
+	# 		setattr(g,param,value)
 
 if __name__ == '__main__':
 	app.debug = True
