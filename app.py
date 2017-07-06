@@ -47,10 +47,10 @@ def before_request():
 	post_parameters = ['content',
 					   'email']
 					   
-	# if not request.method == 'GET':
-	# 	for param in post_parameters:
-	# 		value = request.json[param] if param in request.json else None
-	# 		setattr(g,param,value)
+	if not request.method == 'GET':
+		for param in post_parameters:
+			value = request.json[param] if param in request.json else None
+			setattr(g,param,value)
 
 if __name__ == '__main__':
 	app.debug = True
