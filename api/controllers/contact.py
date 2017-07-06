@@ -26,5 +26,4 @@ class ContactController(BaseController):
 		sql = "INSERT INTO" + constants.CONTACT_TABLE + "(content,return_address) VALUES (%s,%s)"
 		params = (g.content,g.email)
 		res = db_query_insert(sql,params)
-
 		return super(ContactController,self).success_response({'result':res})
