@@ -39,7 +39,7 @@ app.api.add_resource(ExperienceController, '/experience/<int:experience_id>')
 app.api.add_resource(BlogsController, '/blogs')
 app.api.add_resource(BlogController, '/blog/<int:blog_id>')
 app.api.add_resource(ContactController, '/contact')
-app.api.add_resource(BlogController, '/tag/<int:tag_id>')
+app.api.add_resource(TagController, '/tag/<int:tag_id>')
 
 @app.before_request
 def before_request():
