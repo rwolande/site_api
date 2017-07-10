@@ -17,6 +17,7 @@ from api.controllers.experiences import ExperiencesController
 from api.controllers.blog import BlogController
 from api.controllers.blogs import BlogsController
 from api.controllers.contact import ContactController
+from api.controllers.tag import TagController
 #from utilities import get_log_level
 
 app = Flask(__name__, instance_relative_config=True)
@@ -38,6 +39,7 @@ app.api.add_resource(ExperienceController, '/experience/<int:experience_id>')
 app.api.add_resource(BlogsController, '/blogs')
 app.api.add_resource(BlogController, '/blog/<int:blog_id>')
 app.api.add_resource(ContactController, '/contact')
+app.api.add_resource(BlogController, '/tag/<int:tag_id>')
 
 @app.before_request
 def before_request():
