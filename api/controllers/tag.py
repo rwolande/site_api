@@ -28,6 +28,6 @@ class TagController(BaseController):
 		res = db_query_select(sql,params)
 
 		if len(res) == 0:
-			return super(TagController,self).error_response(Status.MISSING_PARAMETERS)
+			return super(TagController,self).success_response({'posts':[]})
 
 		return super(TagController,self).success_response({'posts':res})
